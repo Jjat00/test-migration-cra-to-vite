@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 const useGet = (endpoint) => {
   const [data, setData] = useState();
   const [error, setError] = useState();
-  const token = process.env.REACT_APP_TOKEN;
+  const token = import.meta.env.REACT_APP_TOKEN;
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_URL_BACKEND}${endpoint}`,
+          `${import.meta.env.REACT_APP_URL_BACKEND}${endpoint}`,
           {
             method: "GET",
             headers: {

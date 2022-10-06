@@ -19,11 +19,12 @@ function App() {
           <button onClick={() => setCounter(counter + 1)}>+</button>
           <button onClick={() => setCounter(counter - 1)}>-</button>
         </div>
-        <div className="container-locations"> 
+        <h1>Locations</h1>
+        <div className="container-locations">
           {data &&
             data.map((item) => (
-              <div>
-                <p>{item.id}</p>
+              <div key={item.id}>
+                <p>ID: {item.id}</p>
                 <p>latitude: {item.location.latitude}</p>
                 <p>longitude: {item.location.longitude}</p>
               </div>
